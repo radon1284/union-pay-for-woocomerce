@@ -241,7 +241,7 @@ function process_ubp_payment(){
 
 $data = array();
         $data['channel_id'] = $get_options['channel_id'];
-        $data['transaction_id'] = $order;
+        $data['transaction_id'] = $order->id;
         $data['source_account'] = $get_options['source_account'];
         $data['source_currency'] = "php";
         $data['target_account'] = $_POST['source_account'];
@@ -313,7 +313,6 @@ function ubp_checkout_field_display_admin_order_meta($order){
         return;
 
     $source_account = get_post_meta( $order->id, 'source_account', true );
-    $transaction = get_post_meta( $order->id, 'transaction', true );
 
     echo '<p><strong>'.__( 'Account Number' ).':</strong> ' . $source_account . '</p>';
 }
