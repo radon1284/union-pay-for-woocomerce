@@ -315,6 +315,5 @@ function ubp_checkout_field_display_admin_order_meta($order){
     $source_account = get_post_meta( $order->id, 'source_account', true );
     $transaction = get_post_meta( $order->id, 'transaction', true );
 
-    echo '<p><strong>'.__( 'Mobile Number' ).':</strong> ' . $source_account . '</p>';
-    echo '<p><strong>'.__( 'Transaction ID').':</strong> ' . $transaction . '</p>';
+    echo '<p><strong>'.__( 'Account Number' ).':</strong> ' . $source_account . '</p>';
 }
